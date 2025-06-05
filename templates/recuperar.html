@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Recuperar Contraseña | Tindel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body style="background: linear-gradient(135deg, #e4efe9, #347c75);">
+    <br>
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container-box {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #265167;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #1c4357;
+        }
+
+        .form-control {
+            border-radius: 8px;
+        }
+
+        .alert {
+            margin-top: 10px;
+        }
+    </style>
+    <section class="container">
+        <div class="container-box">
+            <h3 class="mb-3">Recuperar Contraseña</h3>
+            <p class="text-muted">Ingresa tu usuario y correo para restablecer tu contraseña.</p>
+    
+            <form action="{{ url_for('recuperar_contrasena') }}" method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Usuario</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <input type="text" name="usuario" class="form-control" placeholder="Ingresa tu usuario" required>
+                    </div>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label">Correo Electrónico</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" name="correo" class="form-control" placeholder="Ingresa tu correo" required>
+                    </div>
+                </div>
+    
+                <button type="submit" class="btn btn-primary w-100">Recuperar Contraseña</button>
+            </form>
+    
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+    
+            <a href="{{ url_for('login') }}" class="d-block mt-3 text-decoration-none">← Regresar</a>
+        </div>
+    
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </section>
+</body>
+
+</html>

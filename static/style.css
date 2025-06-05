@@ -1,0 +1,222 @@
+.disñ
+{
+    background-color: aliceblue;
+}
+.secctn
+{
+    background-color: burlywood;
+}
+.buttonmenu
+{
+    width: 102px;
+    background-color: white;
+    color: white;
+}
+
+
+.btn-link {
+  font-weight: 400;
+  color: #0d6efd;
+  text-decoration: underline;
+}
+.btn-link:hover {
+  color: #0a58ca;
+}
+.btn-link:disabled, .btn-link.disabled {
+  color: #6c757d;
+}
+
+.posicion_name_user{
+  align-items: center;
+  margin-left: 180px;
+}
+
+.posicion_name_user_actualizar{
+  margin-left: 210px;
+}
+
+.my-actions { margin: 0 2em; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+
+.right-gap {
+  margin-right: auto;
+}
+
+
+
+
+
+/*NUEVO ARCHIVO DE MIGRACION*/
+.disñ
+{
+    background-color: aliceblue;
+}
+.secctn
+{
+    background-color: burlywood;
+}
+.buttonmenu
+{
+    width: 102px;
+    background-color: white;
+    color: white;
+}
+
+
+.btn-link {
+  font-weight: 400;
+  color: #0d6efd;
+  text-decoration: underline;
+}
+.btn-link:hover {
+  color: #0a58ca;
+}
+.btn-link:disabled, .btn-link.disabled {
+  color: #6c757d;
+}
+
+.posicion_name_user{
+  align-items: center;
+  margin-left: 180px;
+}
+
+.posicion_name_user_actualizar{
+  margin-left: 210px;
+}
+
+.my-actions { margin: 0 2em; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+
+.right-gap {
+  margin-right: auto;
+}
+.imgRedonda
+{
+    border-radius:0px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  max-width: auto;
+}
+
+/* ICON RED SOCIAL*/
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 30px;
+  color: #ffffff; /* Cambia el color según tu diseño */
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00acee; /* Azul para Twitter, ajusta según la red */
+  transform: scale(1.2);
+}
+/* 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+} */
+
+.contenedor-padre {
+  display: flex;
+  justify-content: space-between; /* Separa los círculos */
+  width: 80%; /* Ajusta el ancho según necesites */
+  max-width: 900px;
+}
+
+.contenedor {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+}
+
+
+/* Estilos personalizados para la Navbar de inde */
+.navbar-custom {
+    background-color: #265167; /* Color de fondo */
+    padding: 15px 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar-custom .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-custom .navbar-brand img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    border: 2px solid white;
+}
+
+.navbar-custom .nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ffcc00 !important; /* Color amarillo al pasar el mouse */
+}
+
+.btn-login {
+  background-color: white;
+  color: #000;
+  border: 2px solid #fff;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px 20px;
+  /* transition: all 0.3s ease-in-out; */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-login:active {
+  background-color: #FFD700;
+  /* Amarillo */
+  color: #000;
+  border-color: #FFD700;
+}

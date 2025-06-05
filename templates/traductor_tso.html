@@ -1,0 +1,134 @@
+{% extends 'estructura.html' %}
+{% block contenedor %}
+<br>
+<br>
+<!-- <script>
+            let usuario = "{{ session['nombreUsuario'] if 'nombreUsuario' in session else 'Invitado' }}";
+            // Mostrar alerta de bienvenida con imagen
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    title: "¡Bienvenido a Tindel, " + usuario + "!",
+                    text: "me alegra verte en Tindel.",
+                    icon: "success",
+                    imageUrl: "/static/img/tyndalelogo.jpeg", // URL de la imagen
+                    imageWidth: 100, // Ancho de la imagen
+                    imageHeight: 100, // Alto de la imagen
+                    imageAlt: "Imagen de bienvenida", // Texto alternativo
+                    confirmButtonText: "Continuar"
+                });
+            });
+            </script> -->
+<section class="container">
+    <div class="px-4">
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="idioma_origen">
+                        <option value="español">Español</option>
+                        <option value="tzotzil">Tzotzil</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="form-floating">
+                    <select class="form-select" id="idioma_destino">
+                        <option value="español">Español</option>
+                        <option value="tzotzil">Tzotzil</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-5">
+            <div style="text-align: center;">
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+                <button id="btnSwap" class="btn btn-light border rounded-circle" aria-label="Intercambiar idiomas"
+                    title="Intercambiar idiomas">
+                    <span class="material-icons">swap_horiz</span>
+                </button>
+            </div>
+            <div class="col">
+                <textarea class="form-control" id="texto_entrada" rows="3" placeholder="Escribe aquí"></textarea>
+            </div>
+
+            <div class="col">
+                <textarea class="form-control" id="texto_salida" rows="3" readonly></textarea>
+            </div>
+        </div>
+
+        <br>
+        <button class="btn btn-secondary btn-lg" id="texto_entrada">Traducir</button>
+
+    </div>
+</section>
+<!-- <script>
+    $(document).ready(function () {
+        $("#btnTraducir").click(function () {
+            var texto = $("#texto_entrada").val();
+            var idioma_origen = $("#idioma_origen").val();
+            var idioma_destino = $("#idioma_destino").val();
+
+            $.ajax({
+                url: "/traducir",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    texto: texto,
+                    idioma_origen: idioma_origen,
+                    idioma_destino: idioma_destino
+                }),
+                success: function (response) {
+                    $("#texto_salida").val(response.traduccion);
+                },
+                error: function () {
+                    alert("⚠️ Error en la traducción.");
+                }
+            });
+        });
+    });
+</script> -->
+<script>
+    $(document).ready(function () {
+        $("#texto_entrada").on("input", function () {
+            const texto = $(this).val().trim();
+
+            if (texto.length === 0) {
+                $("#texto_salida").val(""); // Limpiar si no hay nada
+                return;
+            }
+
+            const idioma_origen = $("#idioma_origen").val();
+            const idioma_destino = $("#idioma_destino").val();
+
+            $.ajax({
+                url: "/traducir",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    texto: texto,
+                    idioma_origen: idioma_origen,
+                    idioma_destino: idioma_destino
+                }),
+                success: function (response) {
+                    $("#texto_salida").val(response.traduccion);
+                },
+                error: function () {
+                    $("#texto_salida").val("⚠️ Error en la traducción.");
+                }
+            });
+        });
+    });
+
+</script>
+<script>
+    $("#btnSwap").click(function () {
+        const origen = $("#idioma_origen").val();
+        const destino = $("#idioma_destino").val();
+        $("#idioma_origen").val(destino);
+        $("#idioma_destino").val(origen);
+    });
+</script>
+
+</html>
+{% endblock%}

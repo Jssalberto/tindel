@@ -1,0 +1,90 @@
+{% extends 'estructura.html'%}
+{% block contenedor %}
+    <br>
+    <br>
+    <br>
+    <style>
+        #main-content {
+            background-color: #f5f8fa;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    
+        table.table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.95rem;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    
+        table.table thead {
+            background: linear-gradient(90deg, #4e89ae, #43658b);
+            color: white;
+        }
+    
+        table.table th, table.table td {
+            vertical-align: middle !important;
+            text-align: center;
+            padding: 12px;
+        }
+    
+        table.table tbody tr {
+            transition: background-color 0.3s;
+        }
+    
+        table.table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+    
+        .icon-mensaje {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    
+        .icon-mensaje i {
+            font-size: 2.5rem;
+            color: #4e89ae;
+        }
+    </style>
+    
+    <section class="container" id="main-content">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped table-bordered" id="MyTable">
+                <thead>
+                    <tr class="text-center" style="background-color: #79a1b9">
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Mensaje</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for mensaje in mensajes %}
+                        <tr>
+                            <td>{{ mensaje[1] }}</td>
+                            <td>{{ mensaje[2] }}</td>
+                            <td>{{ mensaje[3] }}</td>
+                            <td>{{ mensaje[4] }}</td>
+                            <td>{{ mensaje[5] }}</td>
+                            <td>
+                                <!-- <button onclick="marcarVisto({{ mensaje[0] }})">Marcar como visto</button> -->
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- VENTANA EMERGENTE  PARA ELIMINAR VENTANA-->
+    {% block eliminar_ventana %}
+    <!-- ----------------Estas librerias son necesarias para la ventana modal------------------------------------------>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+    {% endblock %}
+
+{% endblock %}

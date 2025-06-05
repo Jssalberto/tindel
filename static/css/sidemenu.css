@@ -1,0 +1,436 @@
+:root {
+    --width: 240px;
+    --padding: 10px;
+    --bgcolor: rgb(52, 52, 52);
+    --hovercolor: rgba(244, 236, 236, 0.194);
+    --width-collapsed: 50px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    margin-left: var(--width-collapsed);
+}
+
+.body-expanded {
+    margin-left: var(--width);
+}
+
+#main-container {
+    color: white;
+    text-decoration: none;
+}
+
+#sidemenu {
+    background-color: var(--bgcolor);
+    background: linear-gradient(135deg, #000000, #0f2027, #2c5364);
+    color: white;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#sidemenu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*HEADER  barra superior oculto 18 abril 2025 2:47*/
+/* #sidemenu #header
+{
+    background-color: #1c4357;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    border-bottom: solid 1px var(--hovercolor);
+} */
+
+/* HEADER barra superior oculto 18 abril 2025 2:47*/
+#header {
+    /* background-color: #1c4357; */
+    /* width: 100%; */
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* border-bottom: 1px solid var(--hovercolor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    box-sizing: border-box; */
+}
+
+#sidemenu #header #title {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#sidemenu #header #title,
+#sidemenu #header #menu-btn {
+    vertical-align: middle;
+    color: var(--yt-spec-icon-active-other);
+    width: 40px;
+    height: 45px;
+    padding: 8px;
+    z-index: 1;
+    top: -120px;
+    border-radius: 150px;
+}
+
+#sidemenu #header #menu-btn {
+    display: inline-block;
+}
+
+#sidemenu #header #menu-btn {
+    cursor: pointer;
+    padding: 10px;
+    width: var(--width-collapsed);
+    box-sizing: border-box;
+}
+
+/* PASAR UN COLOR AL SELECCIONAR EL BUTTON MENU*/
+#sidemenu #header #menu-btn:hover {
+    /* background-color: var(--hovercolor); */
+    background: linear-gradient(135deg, #bababa, #347c75);
+}
+
+#sidemenu #header #menu-btn .btn-hamburger {
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+}
+
+/*PROFILE*/
+#sidemenu #profile {
+    border-bottom: solid 1px var(--hovercolor);
+    padding: var(--padding) 0;
+    text-align: center;
+    /* margin-top: -45px; */
+}
+
+#sidemenu #profile #photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    padding: 0;
+    /* margin-top: 21%; */
+}
+
+/* #sidemenu #profile #photo img{
+    border-radius: 50%;
+    width: 60%;
+    margin-top: 21%;
+} */
+
+#sidemenu #profile #photo img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -160px;
+    /* ✅ ajusta este valor a tu gusto */
+    margin-top: -10px;
+}
+
+
+#sidemenu #profile #photo,
+#sidemenu #profile #name {
+    font-size: 24px;
+    padding: var(--padding) 0;
+    overflow: hidden;
+    margin-top: -50px;
+}
+
+/*ITEMS*/
+#sidemenu #menu-items {
+    overflow: hidden;
+    /* overflow: visible; */
+}
+
+/* MOVIMIENTO DE LAS OPCIONES AL PASAR EL CURSOR */
+#sidemenu #menu-items .item a {
+    transition: transform 0.3s ease;
+}
+
+/* MOVIMIENTO DE LAS OPCIONES AL PASAR EL CURSOR */
+#sidemenu #menu-items .item a:hover {
+    transform: scale(1.05) translateX(5px);
+}
+
+#sidemenu #menu-items .item {
+    width: var(--width);
+}
+
+#sidemenu #menu-items .item .icon {
+    display: inline-block;
+}
+
+#sidemenu #menu-items .item .icon,
+#sidemenu #menu-items .item .title {
+    font-size: 14px;
+    vertical-align: middle;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#sidemenu #menu-items .item a {
+    display: block;
+}
+
+/* EVENTO COLOR SELECCIONAR AL PASAR CURSOR*/
+#sidemenu #menu-items .item a:hover {
+    background-color: var(--hovercolor);
+    border-radius: 5px;
+    /* background: linear-gradient(135deg, #bababa, #d9cbb2, #f0e5d8); */
+    background: linear-gradient(135deg, #bababa, #347c75);
+}
+
+#sidemenu #menu-items .item .icon {
+    box-sizing: border-box;
+    padding: var(--padding);
+    width: var(--width-collapsed);
+}
+
+#sidemenu #menu-items .item .icon img {
+    width: 100%;
+}
+
+#sidemenu #menu-items .item .title {
+    padding: var(--padding) 0;
+}
+
+#sidemenu #menu-items .item.separador {
+    height: 1px;
+    border-bottom: solid 1px var(--hovercolor);
+    margin: 15px 0;
+}
+
+.menu-expanded {
+    width: var(--width);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu-expanded #header #title {
+    display: inline-block;
+    width: calc(100% - 50px);
+    margin-right: -5px;
+    padding: var(--padding);
+
+}
+
+.menu-expanded #header #title span {
+    width: calc(--width) - var(--width-collapsed) - 5px;
+    overflow: hidden;
+}
+
+.menu-expanded #profile #photo {
+    width: 200px;
+}
+
+.menu-expanded #profile #name {
+    width: 100%;
+}
+
+.menu-collapsed {
+    width: var(--width-collapsed);
+}
+
+.menu-collapsed #header #title {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-collapsed #profile #name {
+    display: none;
+}
+
+.menu-collapsed .item {
+    width: 100%;
+}
+
+/* ESTILOS PARTE DE ESTRUCTURA OVER, ITEMS ENTRE OTROS */
+/* Ocultar texto cuando el menú está colapsado */
+.menu-collapsed #profile b {
+    display: none;
+}
+
+/* Reducir el tamaño de los íconos si el menú se colapsa */
+.menu-collapsed .item .icon img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Ajustar los íconos */
+.icon img {
+    width: 40px;
+    /* Tamaño adecuado */
+    height: 40px;
+}
+
+/* Ajustar el menú contraído */
+.menu-collapsed {
+    width: 50px;
+    /* Ajusta según el tamaño deseado */
+}
+
+.menu-collapsed .title {
+    display: none;
+    /* Oculta los textos para evitar que se deformen */
+}
+
+/* #347c75 */
+
+/* AL SELECIONAR QUE EL CURSOR QUEDE MARCADO */
+.item.active {
+    /* background-color: #347c75; */
+    background: linear-gradient(135deg, #bababa, #347c75);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item.active .title span {
+    font-weight: bold;
+    color: #e7eaee;
+}
+
+#logout i {
+    color: #f39c12;
+    /* Color dorado */
+    font-size: 1.4rem;
+    /* Tamaño más grande */
+}
+
+/* 700 and 1160 */
+@media screen and (max-width: 700px) {
+    #sidemenu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: white;
+        border-top: 1px solid #ccc;
+        z-index: 999;
+        overflow-x: auto;
+    }
+
+    #menu-items {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.2rem;
+        display: flex;
+    }
+
+    .item .icon i {
+        font-size: 1.5rem;
+    }
+
+    .item .title span {
+        display: none;
+    }
+
+    #profile,
+    #menu-btn,
+    #header {
+        display: none;
+    }
+
+    /* 🎯 TOOLTIP */
+    .item a {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .item a::after {
+        content: attr(data-title);
+        position: absolute;
+        bottom: 120%; /* más arriba del ícono */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ec0b0b;
+        color: #fff;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        border-radius: 5px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+    }
+
+    .item a:hover::after {
+        opacity: 1;
+    }
+}
+
+
+
+/* @media screen and (min-width: 700px) and (max-width: 1160px) {
+    #sidemenu {
+        width: 70px;
+    }
+
+    .item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .item .title span {
+        display: none;
+    }
+
+    .item::after {
+        content: attr(data-title);
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #222;
+        color: #fff;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 1000;
+    }
+
+    .item:hover::after {
+        opacity: 1;
+    }
+} */

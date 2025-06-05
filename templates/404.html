@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- TITULO -->
+        <title>TAW MEXICANA S.A DE C.V </title>
+        <!-- ======CADENA DE CARACTERES=======-->
+        <meta charset="utf-8">
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta content='default' name='apple-mobile-web-app-status-bar-style'>
+        <meta content='initial-scale=1.0, minimum-scale=1.0, maximum-scale=5' name='viewport'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- ======Bootstrap CSS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!--  ==== IMAGEN =====-->
+        <link rel="shortcut icon" type="image/png" href="/static/img/logotaw-PhotoRoom.png">
+        <link rel="apple-touch-icon" href="/static/img/logotaw-PhotoRoom.png">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="/static/css/styles.css" rel="stylesheet" />
+        <link href="/static/css/theme.css" rel="stylesheet" media="all">
+
+        <!-- CSS-->
+        <link rel="stylesheet" href="/static/css/estilo.css" type="text/css"/>
+        <link rel="stylesheet" href="" type="text/css"/>
+
+    </head>
+    <!-- CUERPO DE LA PAGINA-->
+    <div class="bg-danger">
+
+    </div>
+    <body class="sb-nav-fixed bg-light">
+
+        <header class="head color_nav">
+            <nav class="navbar navbar-light" style="background-color: #1c4357;">
+                <div class="container">
+                  <a class="navbar-brand" href="#">
+                  </a>
+                </div>
+                <br>
+            </nav>
+        </header>
+        <br>
+        <br>
+        <section class="container">
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container px-0 lg">
+                        <br>
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group me-2" role="group" aria-label="First group">
+                                <a href="{{url_for("login")}}" 
+                                    style="width: 150px;
+                                        text-align: left;
+                                        height: 50px;
+                                        background-color:#B3E5FC;
+                                        border-style: none;
+                                        color: #757575;
+                                        border-radius: 10px;
+                                        text-decoration: none;
+                                        top: 120%;"
+                                    >
+                                    <div style="margin-top: 11px;
+                                            margin-left:37px;">
+                                        <b>Regresar</b>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+            {% block title %} <h1 class="text-center"><i> <strong>Errorhandler
+                
+            </strong></i></h1> {% endblock %}
+            <br>
+            <br>
+            {% block body %}
+                <h1 class="text-center">⚠️ El sitio al que deseas acceder no existe ⚠️</h1>
+            {% endblock %}
+            <br>
+            <br>
+            <br>
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+        </section>
+    </body>
+</html>

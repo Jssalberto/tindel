@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- TITULO -->
+    <title>Tindel</title>
+    <!-- ======CADENA DE CARACTERES=======-->
+    <meta charset="utf-8">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta content='default' name='apple-mobile-web-app-status-bar-style'>
+    <meta content='initial-scale=1.0, minimum-scale=1.0, maximum-scale=5' name='viewport'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- ======Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--  ==== IMAGEN =====-->
+    <link rel="shortcut icon" type="image/png" href="/static/img/tyndalelogo.jpeg">
+    <link rel="apple-touch-icon" href="/static/img/tyndalelogo.jpeg">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/static/css/styles.css" rel="stylesheet" />
+    <link href="/static/css/theme.css" rel="stylesheet" media="all">
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="/static/css/estilo.css" type="text/css" />
+    <link rel="stylesheet" href="/static/style.css" type="text/css" />
+
+    <link rel="stylesheet" href="" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="/static/js/login.js"></script> <!-- Asegúrate de incluir tu archivo JS -->
+
+    <!-- SWEETALERT-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<!-- CUERPO DE LA PAGINA-->
+<body class="sb-nav-fixed bg-light" style="background: linear-gradient(135deg, #e4efe9, #347c75);">
+    <!-- <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    title: "¡Atención!",
+                    text: "Puedes ver este contenido solo si eres Administrador.",
+                    icon: "warning",
+                    imageUrl: "/static/img/tyndalelogo.jpeg", // Reemplaza con la URL de tu imagen
+                    imageWidth: 200,
+                    imageHeight: 200,
+                    imageAlt: "Imagen de advertencia",
+                    confirmButtonText: "Entendido"
+                });
+            });
+        </script> -->
+    <style>
+        .eye {
+            width: 50px;
+            height: 25px;
+            background: #423232;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .eye::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .eye::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: rgb(80, 63, 63);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .hidden .eye::before {
+            background: gray;
+            /* Cuando está en modo oculto */
+        }
+
+        .hidden .eye::after {
+            background: gray;
+        }
+    </style>
+
+    <section class="container images-fondo">
+        <div class="container">
+            <div class="login-wrap">
+                <div class="login">
+                    <div class="login-form">
+                        <!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group me-2" role="group" aria-label="First group">
+                                <a href="{{ url_for('inde') }}"
+                                    class="btn d-flex align-items-center justify-content-center text-white"
+                                    style="width: 160px; height: 50px; border-radius: 12px; text-decoration: none; background-color: #265167;">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    <i class="fas fa-arrow-left me-2"></i>
+                                    <strong>Regresar</strong>
+                                </a>
+                            </div>
+                        </div> -->
+                        <form action="{{url_for('validar_usuario')}}" method="POST" data-sb-form-token="API_TOKEN">
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                            {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                            <div class="wrapper">
+                                <div class="logo">
+                                    <img src="/static/img/tindelV3.png" alt="">
+                                </div>
+                                <div class="text-center mt-4 name">
+                                    <b>Tindel</b>
+                                </div>
+                                <form class="p-3 mt-3" id="login-form">
+                                    <div class="form-field d-flex align-items-center">
+                                        <span class="far fa-user"></span>
+                                        <input type="text" name="usuario" id="usuario" placeholder="Username"
+                                            for="usuario" required>
+                                    </div>
+                                    <div class="form-field d-flex align-items-center">
+                                        <span class="fas fa-key"></span>
+                                        <input type="password" name="password" id="password"
+                                            placeholder="***************" required>
+                                        <span id="togglePassword"
+                                            style="cursor: pointer; margin-left: 50px; margin-right: 5%;">
+                                            <i class="fas fa-eye"></i> <!-- Icono de ojito -->
+                                        </span>
+                                    </div>
+                                    <button class="btn mt-3">Login</button>
+                                </form>
+                                <!-- <div class="text-center fs-6">
+                                        <a href="#">No tienes una Cuenta?</a> or <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign up</a>
+                                    </div> -->
+                                <div class="text-center fs-6">
+                                    <a href="#">No tienes una Cuenta?</a> or
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Crear Cuenta</a>
+                                    <br>
+                                    <a href="{{url_for('recuperar_password')}}" data-bs-toggle="#"
+                                        data-bs-target="#">¿Olvidaste
+                                        tu contraseña?</a>
+                                        <a href="{{ url_for('inde') }}" class="d-block mt-3 text-decoration-none">← Regresar</a>
+                                </div>
+                            </div>
+                            
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Crea tu cuenta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ url_for('Create_user') }}" method="POST">
+                            <div class="form-group">
+                                <label><b><i>Nombre</i></b></label>
+                                <input class="au-input au-input--full border_tem" type="text" name="nombre" id="nombre"
+                                    placeholder="Escribe aquí tu nombre" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><b><i>Usuario</i></b></label>
+                                <input class="au-input au-input--full border_tem" type="text" name="usuario"
+                                    id="usuario" placeholder="Escribe aquí tu usuario" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><b><i>Correo Electrónico</i></b></label>
+                                <input class="au-input au-input--full border_tem" type="email" name="correo_electronico"
+                                    id="correo_electronico" placeholder="Ejemplo: correo@gmail.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><b><i>Contraseña</i></b></label>
+                                <input class="au-input au-input--full border_tem" type="password" name="password"
+                                    id="password" placeholder="*****************" required>
+                            </div>
+
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                            </div>
+
+                            <br>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary border-2 border_tem" type="submit"><b><i>Crear
+                                            Cuenta</i></b></button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/static/js/scripts.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        document.getElementById("togglePassword").addEventListener("click", function () {
+            var passwordInput = document.getElementById("password");
+            var icon = this.querySelector("i");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";  // Mostrar contraseña
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash"); // Cambiar icono
+            } else {
+                passwordInput.type = "password";  // Ocultar contraseña
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye"); // Restaurar icono
+            }
+        });
+    </script>
+
+
+    <!-- VENTANA EMERGENTE  PARA ELIMINAR VENTANA-->
+    {% block eliminar_ventana%}
+    {% endblock %}
+</body>
+
+</html>

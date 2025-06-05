@@ -1,0 +1,121 @@
+{% extends 'estructura.html'%}
+{% block contenedor %}
+
+<section class="container images-fondo">
+    <div class="login-wrap">
+        <div class="login">
+            <br>
+            <a href="#" class="rounded-circle">
+                <img src="/static/img/tindelV3.png" alt="" style="border-radius:80%;
+                height: 300px;
+                width: 300px;
+                margin-left: 120px;
+                margin-top: 30px;
+                background-color: #757575;">
+            </a>
+            <!-- <a href="#" id="navbarDropdown" data-bs-toggle="dropdown">
+                <img  class="img_users" 
+                style="border-radius:80%;
+                height: 70px;
+                width: 70px;
+                margin-left: 300px;
+                margin-top: -90px;"
+                src="/static/img/tinde.png" alt="">
+            </a> -->
+
+            <div class="form-group posicion_name_user">
+                <!-- <b>Usuario: {{session["nombreUsuario"]}}</b><br> -->
+                <b>
+                    {% if session["nombre_rol"] == "admin" %}
+                    Admin: {{ session["nombreUsuario"] }}
+                    {% else %}
+                    Usuario: {{ session["nombreUsuario"] }}
+                    {% endif %}
+                </b>
+                <br>
+                <b>Online: <div class="spinner-grow spinner-grow-sm text-success" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </b> <br>
+            </div>
+        </div>
+        <br>
+
+        <!-- <div class="btn-toolbar posicion_name_user_actualizar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <a href="{{url_for('get_users_perfil')}}" style="width: 150px;
+                            text-align: left;
+                            height: 50px;
+                            background-color:#EEEEEE; 
+                            border-style: none;
+                            color: #757575;
+                            border-radius: 10px;
+                            text-decoration: none;
+                            top: 120%;">
+                    <div style="margin-top: 11px;
+                                margin-left:37px;">
+                        {% if session["nombre_rol"] == "admin" %}
+                        <b>Registrar..</b>
+                        {% else %}
+                        <b>Editar perfil</b>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        </div> -->
+    </div>
+    </div>
+
+    {% if session["nombre_rol"] == "admin" %}
+    <table class="table table-hover table-striped table-bordered table-responsive table-condensed" id="MyTable">
+        <thead>
+            <tr style="background-color: #79a1b9" class="text-center" class="width-100%">
+                <th>Nombre</th>
+                <th>Username</th>
+                <!-- <th>Password</th> -->
+                <th>Image</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in mostrarusuarios %}
+            <tr>
+                <td>{{ usuario[1] }}</td>
+                <td>{{ usuario[2] }}</td>
+                <!-- <td>{{ usuario[3] }}</td> -->
+                <!-- <td>
+                    <img  class="img_users" style="border-radius:80%;
+                    height: 70px;
+                    width: 70px;"
+                    src="/static/img/{{usuario[4]}}/" alt="">
+                </td> -->
+                <td>
+                    <p>Ruta: /static/img/{{ usuario[4] }}</p>
+                    <img class="img_users" style="border-radius:80%;
+                    height: 70px;
+                    width: 70px;" src="/static/img/{{ usuario[4] }}" alt="Imagen de {{ usuario[1] }}">
+                </td>
+
+
+                <td width="10px">
+                    <a href="#" class="btn btn-warning btn-sm" v-on:click.prevent="#">Editar</a>
+                </td>
+                <td width="10px">
+                    <a href="/eliminar_usuario_perfil/{{ usuario[0] }}/" class="dltBtnv btn btn-danger btn-sm"
+                        v-on:click.prevent="javascript:void(0)">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+</section>
+{% endblock %}

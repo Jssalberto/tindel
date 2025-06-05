@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tindel</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/static/img/tindelV3.png" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/static/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- SWEETALERT-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body id="page-top">
+    <!-- <script>
+        // Mostrar alerta de bienvenida con imagen
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                title: "¡Bienvenido!",
+                text: "Tindel se alegra de tenerte en este lugar.",
+                icon: "success",
+                imageUrl: "/static/img/tyndalelogo.jpeg", // URL de la imagen
+                imageWidth: 200, // Ancho de la imagen
+                imageHeight: 200, // Alto de la imagen
+                imageAlt: "Imagen de bienvenida", // Texto alternativo
+                confirmButtonText: "Continuar"
+            });
+        });
+    </script> -->
+    <!-- Navigation-->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#">
+                <img class="img_users" style="border-radius:80%;
+                            height: 55px;
+                            width: 55px;" src="/static/img/tyndalelogo.jpeg" alt="">
+                Tindel
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">Quienes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Contenido</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contactanos</a></li>
+                    <a href="{{url_for('login')}}" class="btn btn-primary btn-lg px-4 py-2 rounded-pill shadow-sm">
+                        <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+                    </a>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" style="background: linear-gradient(135deg,#347c75, #bababa);">
+        <!-- style="background: linear-gradient(135deg,#347c75, #bababa);" -->
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/tindelV3.png" alt="#">
+                Tindel
+            </a>
+            <style>
+                /* .navbar-toggler {
+                    border: none;
+                } */
+            
+                .navbar-toggler-icon {
+                    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+                }
+            </style>
+            
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenido del menú -->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Contenido</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contáctanos</a></li>
+                    <li class="nav-item">
+                        <a href="{{url_for('login')}}" class="btn btn-login">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Tindel Tzotzil, lugar donde todo esta conectado :)</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Tindel conectando culturas :)</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="page-section bg-primary" id="about" style="background: linear-gradient(135deg,#347c75, #bababa);">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="contenedor-padre">
+                        <div class="contenedor">
+                            <h2>Misión</h2>
+                            <p>Romper las barreras del idioma y hacer accesible la comunicación en tzotzil y español
+                                mediante el uso de la tecnología.</p>
+                        </div>
+                        <div class="contenedor">
+                            <h2>Visión</h2>
+                            <p>Ser reconocidos como la plataforma de traducción para la comunidad en general brindando
+                                servicios de traducción.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">Que abarcamos en Tindel</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Traduccion del Idioma</h3>
+                        <p class="text-muted mb-0">Queremos hacer de Tindel una herramienta para
+                            que puedas traduccir el idioma de una manera sencilla
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Cultura</h3>
+                        <p class="text-muted mb-0">Tindel esta basado en los idiomas indigenas
+                            y sus raizes por lo cual la cultura es un aspecto fundamental
+                            para nosotros
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Tradiciones</h3>
+                        <p class="text-muted mb-0">En Tindel nos vasamos en el idioma tzotzil lo
+                            que nos lleva a tener un impacto importante en sus Tradiciones, que
+                            queremos enseñarte
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Gastronomia</h3>
+                        <p class="text-muted mb-0">En Tindel no solo queremos ofrecerte traducion del idioma
+                            si no que tambien enseñarte lo importante que es la gastronomia
+                            para nosotros
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio-->
+    <div id="portfolio">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="/static/assets/img/portfolio/thumbnails/diamuertos.jpg"
+                        title="Gastronomia">
+                        <img class="img-fluid" src="/static/assets/img/portfolio/thumbnails/diamuertos.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Gastronomia</div>
+                            <div class="project-name">Gastronomia</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="/static/assets/img/portfolio/fullsize/2.jpg" title="Dia de Muertos">
+                        <img class="img-fluid" src="/static/assets/img/portfolio/fullsize/2.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Dia de Muertos</div>
+                            <div class="project-name">Dia de Muertos</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="/static/assets/img/portfolio/fullsize/3.jpg" title="Culturas">
+                        <img class="img-fluid" src="/static/assets/img/portfolio/fullsize/3.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Culturas</div>
+                            <div class="project-name">Cultura</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="/static/assets/img/portfolio/fullsize/4.jpg" title="Tradiciones">
+                        <img class="img-fluid" src="/static/assets/img/portfolio/fullsize/4.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Tradiciones</div>
+                            <div class="project-name">Tradiciones</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="/static/assets/img/portfolio/fullsize/5.jpg" title="Vestimenta">
+                        <img class="img-fluid" src="/static/assets/img/portfolio/fullsize/5.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Vestimentas</div>
+                            <div class="project-name">Vestimenta</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="/static/assets/img/portfolio/fullsize/6.jpg" title="Idioma">
+                        <img class="img-fluid" src="/static/assets/img/portfolio/fullsize/6.jpg" alt="..." />
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">Idioma</div>
+                            <div class="project-name">Idioma</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call to action-->
+    <!-- <section class="page-section" style="background: linear-gradient(135deg,#347c75, #bababa);">
+        <div class="container px-4 px-lg-5 text-center">
+            <h2 class="mb-4">Lo que nos identifica en Tindel</h2>
+        </div>
+    </section> -->
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6 text-center">
+                    <h2 class="mt-0">Envianos un Mensaje</h2>
+                    <hr class="divider" />
+                    <p class="text-muted mb-5">Es posible que nos ayudes a detectar problemas o mejorar nuestras
+                        condiciones en Tindel</p>
+                </div>
+            </div>
+            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                <div class="col-lg-6">
+                    <form action="{{url_for('enviar_msm')}}" method="POST" id="contactForm">
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" name="nombre" type="text"
+                                placeholder="Enter your name..." required />
+                            <label for="name">Escribe tu nombre</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Un nombre es requerido.</div>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" name="correo" type="email"
+                                placeholder="name@example.com" required />
+                            <label for="email">Escribe tu correo</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Tu correo es requerido.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email no es valido.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" name="telefono" type="tel"
+                                placeholder="(123) 456-7890" />
+                            <label for="phone">Escribe tu numero de telefono</label>
+                        </div>
+                        <!-- Message input-->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" name="mensaje"
+                                placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+                            <label for="message">Redacta tu mensaje para Tindel</label>
+                        </div>
+                        <!-- Submit Button-->
+                        <div class="d-grid">
+                            <button class="btn-xl" id="submitButton" type="submit"
+                                style="background: linear-gradient(135deg,#347c75, #bababa);">Enviar
+                            </button>
+                        </div>
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+
+                </div>
+            </div>
+            <!-- <div class="icon facebook">
+                <div class="tooltip">Facebook</div>
+                <span><i class="fa-brands fa-facebook"></i></span>
+            </div>
+
+            <div class="icon youtube">
+                <div class="tooltip">YouTube</div>
+                <span><i class="fa-brands fa-youtube"></i></span>
+            </div>
+
+            <div class="icon x">
+                <div class="tooltip">X</div>
+                <span><i class="fa-brands fa-x-twitter"></i></span>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- HERENCIA DE ESTRUCTURA-->
+    {% block contenedor %}
+    {% endblock %}
+
+    <style>
+        /* .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        } */
+
+        .container .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            margin: 0 20px;
+            width: 70px;
+            height: 70px;
+            background: #e7cccc;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            cursor: pointer;
+        }
+
+        .container .icon i {
+            font-size: 28px;
+            color: #555;
+            transition: 0.4s;
+        }
+
+        .container .tooltip {
+            position: absolute;
+            top: -35px;
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+        }
+
+        .container .icon:hover .tooltip {
+            opacity: 1;
+            top: -45px;
+        }
+
+        /* Hover de colores */
+        .container .facebook:hover {
+            background: #3b5998;
+        }
+
+        .container .facebook:hover i {
+            color: #fff;
+        }
+
+        .container .youtube:hover {
+            background: #FF0000;
+        }
+
+        .container .youtube:hover i {
+            color: #fff;
+        }
+
+        .container .x:hover {
+            background: #000000;
+        }
+
+        .container .x:hover i {
+            color: #fff;
+        }
+    </style>
+
+    <footer class="bg-primary py-5" style="background: linear-gradient(135deg, #bababa, #347c75);">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-white mt-0">Tindel &copy; 2025 Todos los derechos reservados</div>
+        </div>
+        <!-- <h4 class="text-white mt-0" style="text-align: center;">Tindel &copy; 2025</h4>            -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <script src="/static/js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

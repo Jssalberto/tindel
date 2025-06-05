@@ -1,0 +1,274 @@
+{% extends 'estructura.html' %}
+{% block contenedor %}
+<br>
+<style>
+    .audio-btn {
+        background: linear-gradient(135deg, #50798d, #6a9dbb);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .audio-btn:hover {
+        transform: scale(1.1);
+        background: linear-gradient(135deg, #426575, #5a8ba4);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        /* Se mueve hacia arriba */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        /* Sombra suave */
+    }
+
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+
+    .card .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+        color: #343a40;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+</style>
+<section class="container">
+    <!-- CERO TARJETAS -->
+    <div class="card-group row">
+        <div class="row row-cols-2 row-cols-md-3  row-cols-lg-4">
+
+            <!-- ABUELO-->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/conejo.jpeg" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Conejo</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Th'ul</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ABUELA-->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/gato.png" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Gato</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Bolom</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PAPA -->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/perro.png" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Perro</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Tsi'h</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MAMA-->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/vaca.jpg" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Vaca</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Vakax</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HERMANO -->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/culebra.jpg" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Culebra</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Chon</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HERMANA -->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/tigre.jpeg" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Tigre</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Tetikal bolom</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PRIMA -->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/burro.jpg" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Burro</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Buro</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PRIMO-->
+            <div class="col">
+                <div class="card border border-5 border_card shadow-sm" style="width: 100%; max-width: 13rem;">
+                    <div class="d-flex justify-content-center mt-3">
+                        <div class="rounded-circle overflow-hidden" style="width: 120px; height: 120px;">
+                            <img src="/static/img/animales/lombriz.png" alt="Foto de perfil"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-muted">
+                            <b><i><em>Lombriz</em></i></b>
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-outline-secondary border-2 border_tem">
+                                <b><i>Lukum</i></b>
+                            </a>
+                            <br>
+                            <button class="audio-btn " onclick="playAudio('/static/audio/papa.mp3')">
+                                🔊 Escuchar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    function playAudio(audioFile) {
+        let audio = new Audio(audioFile);
+        audio.play();
+    }
+
+</script>
+{% endblock %}

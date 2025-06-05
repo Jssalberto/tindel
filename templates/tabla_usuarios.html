@@ -1,0 +1,118 @@
+{% extends 'estructura.html'%}
+{% block contenedor %}
+    <br>
+    <br>
+    <br>
+    <style>
+        /* Contenedor general */
+        #main-content {
+            background-color: #f5f8fa;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Tabla */
+        table.table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.95rem;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    
+        /* table.table thead {
+            background: linear-gradient(90deg, #4e89ae, #43658b);
+            color: white;
+        } */
+    
+        table.table th, table.table td {
+            vertical-align: middle !important;
+            text-align: center;
+            padding: 12px;
+        }
+    
+        table.table tbody tr {
+            transition: background-color 0.3s;
+        }
+    
+        table.table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+    
+        .btn-sm {
+            border-radius: 20px;
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+    
+        .btn-warning {
+            background-color: #ffbb33;
+            border: none;
+            color: #fff;
+        }
+    
+        .btn-warning:hover {
+            background-color: #ffa500;
+        }
+    
+        .btn-danger {
+            background-color: #e74c3c;
+            border: none;
+            color: #fff;
+        }
+    
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+    </style>
+    
+    <section class="container" id="main-content">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped table-bordered" id="MyTable">
+                <thead>
+                    <tr class="text-center">
+                        <!-- <th>Id Rol</th> -->
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Correo Electronico</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    <!-- <tr>
+                        <td colspan="5">
+                            <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
+                        </td>
+                    </tr> -->
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios_db %}
+                    <tr id="row-{{ usuario.id }}">
+                        <!-- <td>{{ usuario.id_rol}}</td> -->
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.usuario}}</td>
+                        <td>{{ usuario.correo_electronico }}</td>
+                        <td width="10px">
+                            <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                        </td>
+                        <td width="10px">
+                            <button class="delete-btn btn btn-danger btn-sm" data-id="{{ usuario.id }}">
+                                <i class="fa fa-trash"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- VENTANA EMERGENTE  PARA ELIMINAR VENTANA-->
+    {% block eliminar_ventana %}
+    <!-- ----------------Estas librerias son necesarias para la ventana modal------------------------------------------>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+    {% endblock %}
+
+{% endblock %}

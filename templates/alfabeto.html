@@ -1,0 +1,391 @@
+{% extends 'estructura.html' %}
+{% block contenedor %}
+<style>
+    body {
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .alphabet-section {
+        margin: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .alphabet-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .alphabet-card {
+        background: #424242;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .phonetic-symbol {
+        font-size: 24px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .word-example {
+        font-size: 14px;
+        color: #aaa;
+    }
+
+    .progress-bar {
+        width: 80%;
+        height: 4px;
+        background: #333;
+        border-radius: 2px;
+        margin: 5px auto;
+        position: relative;
+    }
+
+    .progress-bar::before {
+        content: "";
+        width: 30%;
+        height: 100%;
+        background: #f1c40f;
+        position: absolute;
+        left: 0;
+        border-radius: 2px;
+    }
+
+    /* Contenedor principal de la página */
+    section {
+        transition: margin-left 0.3s ease, width 0.3s ease;
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    .alphabet-card:hover {
+        transform: scale(1.1);
+    }
+
+    /*css audio*/
+    .audio-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: transform 0.2s;
+    }
+
+    .audio-btn:hover {
+        transform: scale(1.2);
+    }
+</style>
+<section class="container">
+    <br>
+    <div>
+        <br>
+        <div class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 mb-4">
+            <!-- Aquí van 5 tarjetas -->
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">A</span>
+                    <span class="word-example">A</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">B</span>
+                    <span class="word-example">b</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">CH</span>
+                    <span class="word-example">ch</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">CH'</span>
+                    <span class="word-example">ch'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">E</span>
+                    <span class="word-example">e</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 mb-4">
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">I</span>
+                    <span class="word-example">i</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">J</span>
+                    <span class="word-example">j</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">K</span>
+                    <span class="word-example">K</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">K'</span>
+                    <span class="word-example">k'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">L</span>
+                    <span class="word-example">l</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 mb-4">
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">M</span>
+                    <span class="word-example">m</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">N</span>
+                    <span class="word-example">n</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">O</span>
+                    <span class="word-example">o</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">P</span>
+                    <span class="word-example">p</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">P'</span>
+                    <span class="word-example">p'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 mb-4">
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">R</span>
+                    <span class="word-example">r</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">S</span>
+                    <span class="word-example">s</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">T</span>
+                    <span class="word-example">t</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">T'</span>
+                    <span class="word-example">t'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">TS</span>
+                    <span class="word-example">ts</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 mb-4">
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">TS'</span>
+                    <span class="word-example">TS'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center mb-4" style="background: linear-gradient(135deg, #83a4d4, #b6fbff);
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3); 
+        color: rgb(128, 110, 110); 
+        border-radius: 10px; padding: 10px;">
+            Consonantes
+        </h1>
+        <div class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 mb-4">
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">CH'</span>
+                    <span class="word-example">ch'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">K'</span>
+                    <span class="word-example">k'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">P'</span>
+                    <span class="word-example">p</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">T'</span>
+                    <span class="word-example">t'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="alphabet-card">
+                    <span class="phonetic-symbol">TS'</span>
+                    <span class="word-example">ts'</span>
+                    <div class="progress-bar"></div>
+                    <button class="audio-btn" onclick="playAudio('audio/æ.mp3')">
+                        🔊
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</section>
+<script>
+    document.querySelectorAll(".progress-bar").forEach(bar => {
+        let randomProgress = Math.random() * 100;
+        bar.firstChild.style.width = `${randomProgress}%`;
+    });
+</script>
+<script>
+    function playAudio(audioFile) {
+        let audio = new Audio(audioFile);
+        audio.play();
+    }
+</script>
+
+
+{% endblock %}

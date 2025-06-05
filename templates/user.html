@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear user</title>
+</head>
+<body>
+    <head>
+
+
+    </head>
+    <header>
+
+    </header>
+    <section>
+        <h1 class="text-center">welcome soy pagina 1
+
+        </h1>
+        <a href="{{url_for('Create_user')}}">Registrarse</a>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crea tu cuenta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{url_for("Create_user")}}" method="POST">
+                        <div class="form-group">
+                            <label><b><i>id</i></b></label>
+                            <input class="au-input au-input--full border_tem" type="text" name="id" id="id" placeholder="id">
+                        </div>
+                        <div class="form-group">
+                            <label><b><i>Usuario</i></b></label>
+                            <input class="au-input au-input--full border_tem" type="text" name="username" id="username" placeholder="username">
+                        </div>
+                        <div class="form-group">
+                            <label><b><i>Contraseña</i></b></label>
+                            <input class="au-input au-input--full border_tem" type="password" name="passsword" id="passsword" placeholder="passsword">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                          </div>
+                        <br>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-secondary border-2 border_tem" type="submit"><b><i>Crear Cuenta</i></b></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
